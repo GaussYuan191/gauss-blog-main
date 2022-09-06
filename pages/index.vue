@@ -8,7 +8,7 @@
             <img class="averter" src="../assets/img/averter.jpg" alt="" />
           </a>
           <div class="user-info">
-            <nuxt-link to="/article?page=0">{{ userName }}</nuxt-link>
+            <nuxt-link to="/article?page=0" class="user-name">{{ userName }}</nuxt-link>
             <div class="silogon">{{ silogon }}</div>
           </div>
           <div class="share-website">
@@ -62,41 +62,74 @@ export default {
 </script>
 
 <style scoped lang="less">
+:root {
+  --fontColor: #5e5e5e; /*文字颜色*/
+  --titleColor: #3e3e3e; /*标题颜色*/
+  --lineColor: #3fb76c; /*线条绿色*/
+}
 .home-page {
   width: 100%;
   height: 100%;
-  display: flex;
   position: absolute;
-}
-
-#aside {
-  width: 50%;
-  height: 100%;
-  position: relative;
-  background: url('../assets/img/aside-bg.jpg') no-repeat center center;
-  background-size: auto 100%;
-  transition: width 0.3ms;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  .marsk {
-    width: 100%;
+  min-width: 400px;
+  #aside {
+    width: 50%;
     height: 100%;
-    position: absolute;
-  }
-  .content {
-    width: 400px;
-    height: 400px;
-    .averter {
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/img/aside-bg.jpg') no-repeat center center;
+    .marsk {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      z-index: -1;
     }
-    z-index: 2;
+    .content {
+      max-width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .averter {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      .user-info {
+        padding: 16px 0 30px;
+        text-align: center;
+        .user-name {
+          font-size: 22px;
+          text-decoration: none;
+        }
+        .silogon {
+          padding: 10px 0;
+          font-size: 12px;
+        }
+      }
+      .share-website {
+        display: flex;
+        a {
+          width: 34px;
+          height: 34px;
+          margin: 0 10px;
+          background-color: #5e5e5e;
+          cursor: pointer;
+          border-radius: 2px;
+          text-align: center;
+          line-height: 34px;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
   }
-}
-#home-view {
-  width: 50%;
-  height: 100%;
+  .home-view {
+    width: 50%;
+    height: 100%;
+  }
 }
 </style>
