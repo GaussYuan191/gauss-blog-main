@@ -15,7 +15,6 @@
             <a href="https://github.com/GaussYuan191">
               <i class="iconfont">&#xe621;</i>
             </a>
-            aa
             <a href="javascript: void(0)">
               <i class="iconfont">&#xe610;</i>
             </a>
@@ -35,16 +34,16 @@
             <span class="lt2">Music</span>
           </nuxt-link>
         </div>
-      </div>
-      <div class="about-nav">
-        <nuxt-link to="/project">
-          <span class="lt1">项目</span>
-          <span class="lt2">Project</span>
-        </nuxt-link>
-        <nuxt-link to="/about">
-          <span class="lt1">关于</span>
-          <span class="lt2">About</span>
-        </nuxt-link>
+        <div class="about-nav">
+          <nuxt-link to="/project">
+            <span class="lt1">项目</span>
+            <span class="lt2">Project</span>
+          </nuxt-link>
+          <nuxt-link to="/about">
+            <span class="lt1">关于</span>
+            <span class="lt2">About</span>
+          </nuxt-link>
+        </div>
       </div>
     </section>
   </div>
@@ -74,6 +73,7 @@ export default {
   position: absolute;
   display: flex;
   min-width: 400px;
+  overflow: hidden;
   #aside {
     width: 50%;
     height: 100%;
@@ -128,9 +128,57 @@ export default {
       }
     }
   }
-  .home-view {
+  #home-view {
     width: 50%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .list {
+      display: flex;
+      width: 260px;
+      height: 300px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      .about-nav {
+        width: 260px;
+        height: 100px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        a:hover {
+          transition: background 0.3s;
+          background: #3fb76c;
+          color: #fff;
+          border-color: #3fb76c;
+          .lt1 {
+            display: none;
+          }
+          .lt2 {
+            display: inline-block;
+          }
+        }
+        a {
+          width: 100px;
+          height: 100px;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 100px;
+          font-size: 18px;
+          color: #333;
+          text-decoration: none;
+          transition: background 0.3s;
+          .lt1 {
+            display: inline-block;
+          }
+          .lt2 {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 </style>
