@@ -11,7 +11,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js' },
+      { src: 'https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
