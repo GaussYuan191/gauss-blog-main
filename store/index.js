@@ -7,7 +7,7 @@ import hero from './modules/hero';
 Vue.use(Vuex);
 
 const store = () =>
-  new Vuex.store({
+  new Vuex.Store({
     state: {
       scrollTop: 0,
       footerFixed: false,
