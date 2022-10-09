@@ -1,6 +1,6 @@
 <template>
-  <div class="articleBox clearfix">
-    <main class="box main clearfix">
+  <div class="articleBox">
+    <main class="box main">
       <section class="article">
         <div class="item" v-for="(item, index) in articles" :key="index">
           <a href="javascript:void(0)" class="article-title" @click="goDetail(item._id, articles)">
