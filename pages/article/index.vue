@@ -1,6 +1,6 @@
 <template>
-  <div class="articleBox">
-    <main class="box main">
+  <div class="articleBox clearfix">
+    <main class="box main clearfix">
       <section class="article">
         <div class="item" v-for="(item, index) in articles" :key="index">
           <a href="javascript:void(0)" class="article-title" @click="goDetail(item._id, articles)">
@@ -146,6 +146,26 @@ export default {
       this.$router.push('/article/' + id);
     }
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.sideHot = document.querySelector('#sideHot');
+      this.mailContentDom = document.querySelector('#mailContent');
+      this.windowHeight = document.documentElement.clientHeight;
+      this.footer();
+      window.addEventListener('scroll', e => {
+        const top = $(document).scrollTop();
+        const mailContentDomHeight = this.mailContentDom.offsetHeight;
+        this.showFixedTag = top >= this.sideHot.offsetHeight + 80;
+        if (
+          this.windowHeight + top > mailContentDomHeight - 50 &&
+          !this.isLoadingData &&
+          this.hasMore
+        ) {
+          this.loadMore();
+        }
+      });
+    });
+  },
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (to.query.tag || to.query.keyword) {
@@ -170,7 +190,7 @@ export default {
 .main {
   clear: both;
   min-width: 880px;
-  position: relative;
+  overflow: hidden;
 }
 .article {
   width: 620px;
@@ -212,8 +232,7 @@ export default {
 }
 .side {
   width: 250px;
-  position: absolute;
-  right: 0;
+  float: right;
   box-sizing: border-box;
   padding-top: 24px;
 }
