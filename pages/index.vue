@@ -67,6 +67,17 @@ export default {
   --titleColor: #3e3e3e; /*标题颜色*/
   --lineColor: #3fb76c; /*线条绿色*/
 }
+.aside-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+.aside-content img:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 30px rgba(0, 255, 249, 0.57);
+}
 .home-page {
   width: 100%;
   height: 100%;
