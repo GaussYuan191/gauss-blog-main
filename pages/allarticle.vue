@@ -43,6 +43,7 @@ export default {
     };
   },
   created() {
+    // 获取文章列表数据
     getArticleAll().then(res => {
       this.article = res.result || [];
     });
