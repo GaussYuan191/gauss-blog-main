@@ -1,10 +1,11 @@
 {
   "name": "gauss-blog-main",
-  "version": "1.0.0",
+  "version": "1.0.0", 
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "build:docker": "nuxt build && docker build --tag=yuangauss/blog:latest .",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
@@ -25,7 +26,7 @@
   "config": {
     "nuxt": {
       "host": "127.0.0.1",
-      "port": "7080"
+      "port": "7071"
     }
   }
 }

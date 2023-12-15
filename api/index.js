@@ -1,7 +1,7 @@
 import axios from '../config/axios';
 
 // const baseUrl = process.env.NODE_ENV === 'production' ? 'production api' : 'http://124.221.136.248:3009/api/'
-const baseUrl = 'http://124.221.136.248:3009/api/';
+const baseUrl = 'http://43.139.113.76/api/';
 
 export const getArticle = (params = {}) => axios.get(`${baseUrl}article/get`, { params });
 
